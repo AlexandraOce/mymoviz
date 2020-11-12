@@ -48,12 +48,13 @@ function App() {
   })
 
   var moviesData = [
-    {name:"Star Wars : L'ascension de Skywalker", desc:"La conclusion de la saga Skywalker. De nouvelles légendes vont naître dans cette ...", img:"/starwars.jpg", note:6.7, vote:5},
-    {name:"Maléfique : Le pouvoir du mal", desc: "Plusieurs années après avoir découvert pourquoi la plus célèbre méchante Disney avait un cœur ...", img:"/maleficent.jpg", note:8.2, vote:3},
-    {name:"Jumanji: The Next Level", desc: "L’équipe est de retour, mais le jeu a changé. Alors qu’ils retournent dans Jumanji pour secourir ...", img:"/jumanji.jpg", note:4, vote:5},
-    {name:"Once Upon a Time... in Hollywood", desc: "En 1969, Rick Dalton – star déclinante d'une série télévisée de western – et Cliff Booth ...", img:"/once_upon.jpg", note:6, vote:7},
-    {name:"La Reine des neiges 2", desc: "Elsa, Anna, Kristoff, Olaf et Sven voyagent bien au-delà des portes d’Arendelle à la recherche de réponses ...", img:"/frozen.jpg", note:4.6, vote:3},
-    {name:"Terminator: Dark Fate", desc: "De nos jours à Mexico. Dani Ramos, 21 ans, travaille sur une chaîne de montage dans une usine automobile...", img:"/terminator.jpg", note:6.1, vote:1},
+    {name:"Star Wars: The Rise of Skywalker", desc:"The surviving members of the resistance face the First Order once again, and the legendary...", img:"/starwars.jpg", note:6.7, vote:1},
+    {name:"Maleficent", desc: "A vengeful fairy is driven to curse an infant princess, only to discover that...", img:"/maleficent.jpg", note:8.2, vote:6},
+    {name:"Jumanji: The Next Level", desc: "In Jumanji: The Next Level, the gang is back but the game has changed. As they return to...", img:"/jumanji.jpg", note:4, vote:10},
+    {name:"Once Upon a Time... in Hollywood", desc: "A faded television actor and his stunt double strive to achieve fame...", img:"/once_upon.jpg", note:6, vote:20},
+    {name:"Frozen II", desc: "Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land...", img:"/frozen.jpg", note:4.6, vote:17},
+    {name:"Terminator: Dark Fate", desc: "An augmented human and Sarah Connor must stop an advanced liquid Terminator from hunting...", img:"/terminator.jpg", note:6.1, vote:3},
+    {name:"Bad Boys for Life", desc: "Miami detectives Mike Lowrey and Marcus Burnett must face off against a mother-and-son...", img:"/badboy3.jpg", note:6.6, vote:10},
   ]
 
   var movieList = moviesData.map((movie,i) => {
@@ -66,18 +67,18 @@ function App() {
   })
 
   return (
-    <div style={{backgroundColor:"#232528"}}>
+    <div style={{backgroundColor:"#F6ECF5"}}>
       <Container>
         <Nav>
           <span className="navbar-brand">
             <img src="./logo.png" width="30" height="30" className="d-inline-block align-top" alt="logo" />
           </span>
           <NavItem>
-            <NavLink style={{color:'white'}}>Last Releases</NavLink>
+            <NavLink style={{color:'black'}}><strong>LAST RELEASES</strong></NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <Button id="Popover1"  type="button">{moviesCount} films</Button>
+              <Button id="Popover1"  type="button">{moviesCount} movies</Button>
               <Popover placement="bottom" isOpen={popoverOpen} target="Popover1" toggle={toggle}>
                 <PopoverHeader>WishList</PopoverHeader>
                 <PopoverBody>

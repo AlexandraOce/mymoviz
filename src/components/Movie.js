@@ -55,7 +55,7 @@ function Movie(props) {
   for(var i=0;i<10;i++){
       var color = {}
       if(i<myRatingMovie){
-          color = {color: '#f1c40f'}
+          color = {color: '#D980FA'}
       }
       let count = i+1
       tabRating.push(<FontAwesomeIcon onClick={() => setMyRating(count)} style={color} icon={faStar} /> )
@@ -75,19 +75,19 @@ function Movie(props) {
   for(var i=0;i<10;i++){
       var color = {}
       if(i<avgTotal){
-          color = {color: '#f1c40f'}
+          color = {color: '#D980FA'}
       }
       tabGlobalRating.push(<FontAwesomeIcon style={color} icon={faStar} /> )
   }
 
   if(props.movieSee){
-    var colorLike = {color: '#e74c3c',cursor:'pointer'}
+    var colorLike = {color: '#D980FA',cursor:'pointer'}
   } else {
     var colorLike = {cursor:'pointer'}
   }
 
   if(watchMovie){
-    var colorWatch = {color: '#e74c3c'}
+    var colorWatch = {color: '#D980FA'}
   } else {
     var colorWatch = {}
   }
@@ -95,23 +95,18 @@ function Movie(props) {
   return (
     <Col xs="12" lg="6" xl="4">
     <Card style={{marginBottom:30}}>
+    <CardTitle><strong>{props.movieName}</strong></CardTitle>
+    <p><em>Moyenne
+        {tabGlobalRating}
+        ({nbTotalVote})({avgTotal})</em>
+    </p>
     <CardImg top src={props.movieImg} alt={props.movieName} />
     <CardBody>
         <p>Like <FontAwesomeIcon style={colorLike} icon={faHeart} onClick={() => changeLiked(props.movieName,props.movieImg)} /></p>
-  <p>Nombre de vues  <FontAwesomeIcon style={colorWatch} icon={faVideo} onClick={() => addWatch()} /> <Badge color="secondary">{countWatchMovie}</Badge></p>
-        <p>Mon avis 
+  <p>Views <FontAwesomeIcon style={colorWatch} icon={faVideo} onClick={() => addWatch()} /> <Badge color="secondary">{countWatchMovie}</Badge></p>
+        <p>Review
         {tabRating}
-
-        <ButtonGroup size="sm">
-            <Button onClick={() => setMyRating(myRatingMovie-1)} color="secondary">-</Button>
-            <Button onClick={() => setMyRating(myRatingMovie+1)} color="secondary">+</Button>
-        </ButtonGroup>
         </p>
-        <p>Moyenne
-        {tabGlobalRating}
-        ({nbTotalVote})
-        </p>
-  <CardTitle>{props.movieName}</CardTitle>
         <CardText>{props.movieDesc}</CardText>
     </CardBody>
     </Card>
